@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ItemMaster from '../ItemMaster/ItemMaster'
 
 const loginUrl = 'http://localhost:8000/sign-in/'
 
@@ -44,7 +45,8 @@ export default function Home() {
                     <input type="submit" value="sign-in"/>
                 </form>
             </div>
-            {tokenInfo.user?.token ? (<h3>You're in!</h3>) : null}
+            {/* {tokenInfo.user?.token ? (<h3>You're in!</h3>) : null} */}
+            {tokenInfo.user?.token ? (<ItemMaster userInfo={tokenInfo.user}/>) : null}
         </>
     )
 }

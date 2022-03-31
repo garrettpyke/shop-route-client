@@ -1,16 +1,16 @@
 import { useState } from 'react';
-import './App.css'
+import '../App.css'
 
 const itemsUrl = 'http://localhost:8000/items/'
 
-export default function ItemMaster({ tokenInfo }) {
+export default function ItemMaster({ userInfo }) {
     const [items, setItems] = useState([])
 
     const handleClick = () => {
         fetch(itemsUrl, {
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Token ${tokenInfo.user.token}`
+                'Authorization': `Token ${userInfo.token}`
             },
             method: 'GET'
             // no body OK?
