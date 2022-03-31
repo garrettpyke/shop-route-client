@@ -16,7 +16,6 @@ export default function Home() {
 
     const handleSubmit = event => {
         event.preventDefault()
-        console.log(user) //remove later
         fetch(loginUrl, {
             headers: {
                 'Content-Type': 'application/json'
@@ -25,7 +24,7 @@ export default function Home() {
             body: JSON.stringify(user)
         })
             .then(res => res.json())
-            .then(data => {
+            .then(data => {                     //remove this block later
                 console.log('data is ', data)
                 return data
               })
@@ -33,7 +32,7 @@ export default function Home() {
             .then(() => setUser({email: "", password: ""}))
     }
 
-    console.log('tokenInfo is ', tokenInfo)
+    console.log('tokenInfo is ', tokenInfo) //remove later
 
     return (
         <>
