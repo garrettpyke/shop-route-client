@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 const loginUrl = 'http://localhost:8000/sign-in/'
 
 export default function Home() {
-    const [tokenInfo, setTokenInfo] = useState({id: 0, email: "", token: ""})
+    const [tokenInfo, setTokenInfo] = useState({user:{id: 0, email: "", token: ""}})
     const [user, setUser] = useState({email: "", password: ""})
 
     const handleChange = event => {
@@ -16,7 +16,7 @@ export default function Home() {
 
     const handleSubmit = event => {
         event.preventDefault()
-        console.log(user)
+        console.log(user) //remove later
         fetch(loginUrl, {
             headers: {
                 'Content-Type': 'application/json'
@@ -25,11 +25,16 @@ export default function Home() {
             body: JSON.stringify(user)
         })
             .then(res => res.json())
+            .then(data => {
+                console.log('data is ', data)
+                return data
+              })
             .then(data => setTokenInfo(data))
             .then(() => setUser({email: "", password: ""}))
-            .then(console.log("tokenInfo 1:", tokenInfo))  // remove later
     }
-    console.log("tokenInfo 2:", tokenInfo) //remove later
+
+    console.log('tokenInfo is ', tokenInfo)
+
     return (
         <>
             <div className="sign-in">
@@ -40,7 +45,7 @@ export default function Home() {
                     <input type="submit" value="sign-in"/>
                 </form>
             </div>
-            {tokenInfo.token ? (<h3>You're in!</h3>) : null}
+            {tokenInfo.user?.token ? (<h3>You're in!</h3>) : null}
         </>
     )
 }
