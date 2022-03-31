@@ -38,7 +38,7 @@ Later versions could include more specific location information such as top or b
 
 - [Mobile](https://github.com/garrettpyke/shop-route/blob/main/Wireframe%20-%20Mobile.pdf)
 - [Desktop](https://github.com/garrettpyke/shop-route/blob/main/Wireframe%20-%20Desktop.pdf)
-- [React front-end components]()
+- [React front-end components](https://github.com/garrettpyke/shop-route-client/blob/main/React-component-diagram.pdf)
 
 
 ### MVP/PostMVP - 5min
@@ -100,10 +100,10 @@ Based on the initial logic defined in the previous sections, here is a breakdown
 
 | Component | Priority | Estimated Time | Actual Time |
 | --- | :---: |  :---: | :---: | 
-| Spin up Django project with dependencies | H | 1 hr| 1.5 hrs | 
-| Set up custom user model & test all routes | H | 3 hrs | 4 hrs |
-| Create Item master model, migrate, add serializer, test all routes | H | 4 hrs | 2.5 hrs |
-| Create List model with relationship to Item master, migrate, add serializer, test all routes | H | 4 hr|  | 
+| Spin up React project with dependencies | H | .5 hr | .5 hr | 
+| Home component with sign-in | H | 2 hrs |  hrs |
+| ItemMaster component | H | 4 hrs | hrs |
+| ShoppingList component | H | 3 hrs | hrs | 
 | Total | H | hrs| hrs | 
 
 ## Additional Libraries
