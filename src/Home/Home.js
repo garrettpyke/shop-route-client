@@ -26,15 +26,22 @@ export default function Home() {
         })
             .then(res => res.json())
             .then(data => setTokenInfo(data))
-            .then(console.log(tokenInfo))
+            .then(() => setUser({email: "", password: ""}))
+            .then(console.log("tokenInfo 1:", tokenInfo))  // remove later
     }
-    console.log(tokenInfo)
+    console.log("tokenInfo 2:", tokenInfo) //remove later
     return (
-        <form onSubmit={handleSubmit}>
-            <input type="text" name="email" value={user.email} onChange={handleChange} placeholder="email"></input>
-            <input type="text" name="password" value={user.password} onChange={handleChange} placeholder="password"></input>
-            <input type="submit" value="sign-in"/>
-        </form>
+        <>
+            <div className="sign-in">
+                <h3>Welcome! Please sign in.</h3>
+                <form onSubmit={handleSubmit}>
+                    <input type="text" name="email" value={user.email} onChange={handleChange} placeholder="email"></input>
+                    <input type="text" name="password" value={user.password} onChange={handleChange} placeholder="password"></input>
+                    <input type="submit" value="sign-in"/>
+                </form>
+            </div>
+            {tokenInfo.token ? (<h3>You're in!</h3>) : null}
+        </>
     )
 }
 
