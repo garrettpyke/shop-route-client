@@ -1,15 +1,17 @@
 // import logo from './logo.svg';
 import './App.css';
-import React, { useState } from 'react'
+import React from 'react'
 import { Route, Link, Routes, Navigate } from "react-router-dom";
+import Home from './Home/Home';
+
 
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-      
-      </header>
+      <h3>Hi</h3>
+      <Home />
     </div>
   );
 }
