@@ -25,7 +25,7 @@ export default function Home() {
             body: JSON.stringify(user)
         })
             .then(res => res.json())
-            .then(data => {                     //remove this block later
+            .then(data => {             //remove this block later
                 console.log('data is ', data)
                 return data
               })
@@ -37,7 +37,7 @@ export default function Home() {
 
     return (
         <>
-            <div className="sign-in">
+            <div className="form sign-in">
                 <h3>Welcome! Please sign in.</h3>
                 <form onSubmit={handleSubmit}>
                     <input type="text" name="email" value={user.email} onChange={handleChange} placeholder="email"></input>
@@ -47,6 +47,7 @@ export default function Home() {
             </div>
             {/* {tokenInfo.user?.token ? (<h3>You're in!</h3>) : null} */}
             {tokenInfo.user?.token ? (<ItemMaster userInfo={tokenInfo.user}/>) : null}
+            {/* {tokenInfo.user?.token ? (<h3>You're in!</h3>) : null} */}
         </>
     )
 }

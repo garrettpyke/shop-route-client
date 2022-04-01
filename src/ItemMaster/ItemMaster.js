@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import '../App.css'
+import ItemMasterForm from '../ItemMasterForm/ItemMasterForm';
 
 const itemsUrl = 'http://localhost:8000/items/'
 
@@ -13,7 +14,6 @@ export default function ItemMaster({ userInfo }) {
                 'Authorization': `Token ${userInfo.token}`
             },
             method: 'GET'
-            // no body OK?
         })
             .then(res => res.json())
             .then(data => {             //remove this block later
@@ -31,6 +31,7 @@ export default function ItemMaster({ userInfo }) {
 
     return (
         <div className="item-master">
+            <ItemMasterForm userInfo={userInfo}/>
             <button onClick={handleClick}>Master Items List</button>
             <h5>{itemsList}</h5>
         </div>
