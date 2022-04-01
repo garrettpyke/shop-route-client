@@ -3,6 +3,7 @@ import "../App.css";
 
 const itemsUrl = "http://localhost:8000/items/";
 
+// Allows user to add items to Item Master list
 export default function ItemMasterForm(props) {
   const [newItem, setNewItem] = useState({
     item_name: "",

@@ -7,6 +7,7 @@ export default function Home() {
     const [tokenInfo, setTokenInfo] = useState({user:{id: 0, email: "", token: ""}})
     const [user, setUser] = useState({email: "", password: ""})
 
+    // Handles fields for user log-in
     const handleChange = event => {
         event.persist()
         setUser(prevUser => {
@@ -15,6 +16,7 @@ export default function Home() {
         })
     }
 
+    // Submits email & password to API & stores Token in State variable. Token is passed to components through props.
     const handleSubmit = event => {
         event.preventDefault()
         fetch(loginUrl, {
@@ -45,9 +47,7 @@ export default function Home() {
                     <input type="submit" value="sign-in"/>
                 </form>
             </div>
-            {/* {tokenInfo.user?.token ? (<h3>You're in!</h3>) : null} */}
             {tokenInfo.user?.token ? (<ItemMaster userInfo={tokenInfo.user}/>) : null}
-            {/* {tokenInfo.user?.token ? (<h3>You're in!</h3>) : null} */}
         </>
     )
 }
