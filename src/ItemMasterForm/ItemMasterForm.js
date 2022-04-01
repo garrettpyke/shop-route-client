@@ -3,7 +3,7 @@ import "../App.css";
 
 const itemsUrl = 'http://localhost:8000/items/'
 
-export default function ItemMasterForm({ userInfo }) {
+export default function ItemMasterForm(props) {
   const [newItem, setNewItem] = useState({
     item_name: "",
     item_location: "",
@@ -27,7 +27,7 @@ export default function ItemMasterForm({ userInfo }) {
     fetch(itemsUrl, {
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Token ${userInfo.token}`
+            'Authorization': `Token ${props.userInfo.token}`
         },
         method: 'POST',
         body: JSON.stringify(newItem)
@@ -36,6 +36,7 @@ export default function ItemMasterForm({ userInfo }) {
             console.log('data is ', data)
             return data
         })
+        .then (() => props.handleClick())
   }
 
   return (
@@ -45,7 +46,7 @@ export default function ItemMasterForm({ userInfo }) {
                 <input type="text" name="item_name" value={newItem.item_name} onChange={handleChange} placeholder="Grocery item"/>
                 <input type="text" name="item_location" value={newItem.item_location} onChange={handleChange} placeholder="Location"/>
                 <input type="text" name="item_class" value={newItem.item_class} onChange={handleChange} placeholder="Group"/>
-                <input type="hidden" name="shopper_id" value={userInfo.id}/>
+                <input type="hidden" name="shopper_id" value={props.userInfo.id}/>
                 <input type="submit" value="Add Item"/>
           </form>
       </div>
