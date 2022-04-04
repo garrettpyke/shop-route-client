@@ -32,6 +32,7 @@ export default function ItemMaster({ userInfo }) {
   const addToShoppingList = (itemId, item_qty) => {
     shoppingListItem.item_num = itemId
     shoppingListItem.item_qty = item_qty
+    // remove later //
     console.log("shoppingListItem is: ", shoppingListItem)
 
     fetch(shoppingListsUrl, {

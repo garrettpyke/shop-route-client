@@ -114,5 +114,5 @@ Based on the initial logic defined in the previous sections, here is a breakdown
 This section will include a brief code snippet of functionality that I am proud of an a brief description.  Code snippet will not be greater than ~10 lines of code. 
 
 ```
-// code will be posted here
+// Include: auto-rerender of master items list
 ```
