@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../App.css";
 import ItemMasterForm from "../ItemMasterForm/ItemMasterForm";
+import ShoppingList from "../ShoppingList/ShoppingList";
 
 const itemsUrl = "http://localhost:8000/items/";
 const shoppingListsUrl = "http://localhost:8000/shopping-lists/";
@@ -8,7 +9,11 @@ const shoppingListsUrl = "http://localhost:8000/shopping-lists/";
 export default function ItemMaster({ userInfo }) {
   const [items, setItems] = useState([]);
   // list_num is hard-coded currently...will use to support multiple shopping lists later
-  let shoppingListItem = {item_num: 0, item_qty: "", list_num: 1}
+  let shoppingListItem = {item_num: 0, 
+                            item_qty: "", 
+                            list_num: 1,
+                            item_desc: "",
+                            item_loc: ""}
 
   // Fetches Item Master list for current user
   const handleClick = () => {
@@ -29,9 +34,11 @@ export default function ItemMaster({ userInfo }) {
   };
 
   // Adds an item to current user's Shopping List
-  const addToShoppingList = (itemId, item_qty) => {
+  const addToShoppingList = (itemId, itemQty, itemName, itemLocation) => {
     shoppingListItem.item_num = itemId
-    shoppingListItem.item_qty = item_qty
+    shoppingListItem.item_qty = itemQty
+    shoppingListItem.item_desc = itemName
+    shoppingListItem.item_loc = itemLocation
     // remove later //
     console.log("shoppingListItem is: ", shoppingListItem)
 
@@ -63,7 +70,7 @@ export default function ItemMaster({ userInfo }) {
             </form> */}
 
             {/* key is incremented here re React doesn't want same key value for different children */}
-            <button key={item.id+1} onClick={() => addToShoppingList(item.id, 1)}>Add to Shopping List</button>
+            <button key={item.id+1} onClick={() => addToShoppingList(item.id, 1, item.item_name, item.item_location)}>Add to Shopping List</button>
           
         </>
     );
@@ -74,6 +81,7 @@ export default function ItemMaster({ userInfo }) {
       <button onClick={handleClick}>Master Items List</button>
       <ItemMasterForm userInfo={userInfo} handleClick={handleClick} />
       <div className="item-list">{itemsList}</div>
+      <ShoppingList userInfo={userInfo}/>
     </div>
   );
 }

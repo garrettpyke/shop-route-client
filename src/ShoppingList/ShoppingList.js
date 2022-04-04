@@ -3,7 +3,7 @@ import "../App.css"
 
 const shoppingListsUrl = "http://localhost:8000/shopping-lists/all"
 
-export default function ShoppingList(userInfo) {
+export default function ShoppingList({ userInfo }) {
     const [shoppingList, setShoppingList] = useState([])
 
     // Fetches Shopping List for current user
@@ -24,7 +24,25 @@ export default function ShoppingList(userInfo) {
         .then((data) => setShoppingList(data));
     };
 
-    const shoppingListItems = shoppingList.map((item) => {
-        
+    const shoppingListItems = shoppingList.map((listItem) => {
+        return (
+            <>
+                <li key={listItem.item_num}>
+                    {listItem.item_desc} 
+                    {listItem.item_loc} 
+                    {listItem.item_qty} 
+                    {listItem.item_complete.toString()} 
+                </li>
+            </>
+        )
     })
+
+    return (
+        <div className="shopping-list">
+            <h3>Shopping List</h3>
+            <button onClick={handleClick}>View Shopping List</button>
+            <ul>{shoppingListItems}</ul>
+        </div>
+    )
+
 }
