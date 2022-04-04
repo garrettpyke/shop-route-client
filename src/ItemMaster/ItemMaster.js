@@ -52,7 +52,7 @@ export default function ItemMaster({ userInfo }) {
     })
         .then(res => res.json())
         .then(data => {             //remove this block later
-            console.log('shopping-list data is ', data)
+            console.log('shopping-list-item data is ', data)
             return data
         })
   }
@@ -61,9 +61,9 @@ export default function ItemMaster({ userInfo }) {
   const itemsList = items.map((item) => {
     return (
         <>
-            <li key={item.id}>
-                {item.item_name} {item.item_location} {item.item_class} {item.id}
-            </li>
+            <p key={item.id}>
+                {item.item_name} {item.item_location} {item.item_class} 
+            </p>
             {/* <form>
                 <input type="text" name="item_qty" defaultValue="1" placeholder="Item Qty"/>
                 <input type="submit" value="Add to Shopping List"/>

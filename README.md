@@ -108,6 +108,8 @@ Based on the initial logic defined in the previous sections, here is a breakdown
 
 ## Additional Libraries
 - [Django QuerySet API reference](https://docs.djangoproject.com/en/4.0/ref/models/querysets/)
+- [Stack Overflow - "Wogan"](https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value)
+
 
 ## Code Snippet
 
