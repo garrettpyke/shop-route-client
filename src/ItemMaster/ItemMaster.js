@@ -55,15 +55,27 @@ export default function ItemMaster({ userInfo }) {
             console.log('shopping-list-item data is ', data)
             return data
         })
-  }
+    }
+
+    // Sort master items list by item description (name)
+    function compare(item1, item2) {
+        if ( item1.item_name < item2.item_name ){
+            return -1;
+        }
+        if ( item1.item_name > item2.item_name ){
+            return 1;
+        }
+        return 0;
+    }
 
   // Renders Item Master list
-  const itemsList = items.map((item) => {
+  const itemsList = items.sort(compare).map((item) => {
     return (
         <>
-            <p key={item.id}>
-                {item.item_name} {item.item_location} {item.item_class} 
-            </p>
+            <p key={item.id}>{item.item_name}</p>
+            <p>{item.item_location}</p> 
+            <p>{item.item_class}</p>
+           
             {/* <form>
                 <input type="text" name="item_qty" defaultValue="1" placeholder="Item Qty"/>
                 <input type="submit" value="Add to Shopping List"/>
@@ -80,7 +92,10 @@ export default function ItemMaster({ userInfo }) {
     <div className="item-master">
       <button onClick={handleClick}>Master Items List</button>
       <ItemMasterForm userInfo={userInfo} handleClick={handleClick} />
-      <div className="item-list">{itemsList}</div>
+      <div className="item-list">
+        <h5>Item Description</h5><h5>Location</h5><h5>Category</h5><h5>Add</h5>
+        {itemsList}
+      </div>
       <ShoppingList userInfo={userInfo}/>
     </div>
   );

@@ -24,14 +24,10 @@ export default function ShoppingList({ userInfo }) {
         })
         .then((data) => setShoppingList(data))
         // .then(() => shoppingList.sort(compare))
-        .then(() => console.log(shoppingList.sort(compare)))
+        .then(() => console.log(shoppingList.sort(compare))) //remove
     };
 
-    /*
-        ///// Sorting Shopping List /////
-        1. Assign each item a number based on its order in object or array (maybe use array index)
-        2. Sort list according to assigned number
-    */
+    
 
     function compare(listItem1, listItem2) {
         if ( listItem1.item_loc < listItem2.item_loc ){
@@ -48,21 +44,23 @@ export default function ShoppingList({ userInfo }) {
     const shoppingListItems = shoppingList.sort(compare).map((listItem) => {
         return (
             <>
-                <li key={listItem.item_num}>
-                    {listItem.item_desc} 
-                    {listItem.item_loc} 
-                    {listItem.item_qty} 
-                    {listItem.item_complete.toString()} 
-                </li>
+                <p key={listItem.item_num}>{listItem.item_desc}</p> 
+                <p>{listItem.item_loc}</p> 
+                {/* {listItem.item_qty}  Add list later... */}
+                <p>{listItem.item_complete.toString()}</p> 
+        
             </>
         )
     })
 
     return (
-        <div className="shopping-list">
+        <div className="shopping-list-header">
             <h3>Shopping List</h3>
             <button onClick={handleClick}>View Shopping List</button>
-            <div>{shoppingListItems}</div  >
+            <div className="shopping-list">
+                <h5>Item</h5><h5>Location</h5><h5>Done?</h5>
+                {shoppingListItems}
+            </div>
         </div>
     )
 
