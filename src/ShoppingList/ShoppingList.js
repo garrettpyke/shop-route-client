@@ -41,7 +41,7 @@ export default function ShoppingList({ userInfo }) {
       },
       method: "DELETE",
     })
-      .then((res) => console.log(res))
+      .then((res) => console.log(res)) // remove //
       .then(() => handleClick());
   }
 
@@ -56,7 +56,7 @@ export default function ShoppingList({ userInfo }) {
           key={listItem.item_num + 2}
           onClick={() => handleDelete(listItem.id)}
         >
-          Done
+          Done!
         </button>
       </>
     );
