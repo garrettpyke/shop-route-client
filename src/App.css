@@ -41,13 +41,15 @@
 .item-list {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr .5fr;
-  align-items: flex-start;
+  align-items: stretch;
   border: 1px solid #777;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
 }
 
 .item-list p {
-  /* border-bottom: 1px solid #777; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   box-shadow: 2px 0 5px 0 rgba(0, 0, 0, .2);
 }
 
