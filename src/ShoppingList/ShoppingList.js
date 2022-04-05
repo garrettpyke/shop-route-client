@@ -2,6 +2,7 @@ import { useState } from "react";
 import "../App.css";
 
 const shoppingListsUrl = "http://localhost:8000/shopping-lists/all";
+const shoppingListItemUrl = "http://localhost:8000/shopping-lists/item/";
 
 // Enables display of shopping lists
 export default function ShoppingList({ userInfo }) {
@@ -32,14 +33,31 @@ export default function ShoppingList({ userInfo }) {
     return 0;
   }
 
+  function handleDelete(listItemId) {
+    fetch(`${shoppingListItemUrl}${listItemId}`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Token ${userInfo.token}`,
+      },
+      method: "DELETE",
+    })
+      .then((res) => console.log(res))
+      .then(() => handleClick());
+  }
+
   const shoppingListItems = shoppingList.sort(compare).map((listItem) => {
     return (
       <>
         <p key={listItem.item_num}>{listItem.item_desc}</p>
         <p>{listItem.item_loc}</p>
         {/* {listItem.item_qty}  Add to list later... */}
-        <p>{listItem.item_complete.toString()}</p>
-        {/* <button></button> */}
+        {/* <p>{listItem.item_complete.toString()}</p> */}
+        <button
+          key={listItem.item_num + 2}
+          onClick={() => handleDelete(listItem.id)}
+        >
+          Done
+        </button>
       </>
     );
   });

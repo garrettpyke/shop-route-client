@@ -94,7 +94,7 @@
 .shopping-list {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  align-items: flex-start;
+  align-items: stretch;
   border: 2px solid #777;
   box-shadow: 0 2px 5px 0 rgba(0, 0,  0, .2);
 }
