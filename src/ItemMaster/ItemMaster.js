@@ -90,7 +90,7 @@ export default function ItemMaster({ userInfo }) {
 
   return (
     <div className="item-master">
-      <button onClick={handleClick}>Master Items List</button>
+      <button className="button-main" onClick={handleClick}>Master Items List</button>
       <ItemMasterForm userInfo={userInfo} handleClick={handleClick} />
       <div className="item-list">
         <h5>Item Description</h5><h5>Location</h5><h5>Category</h5><h5>Add</h5>

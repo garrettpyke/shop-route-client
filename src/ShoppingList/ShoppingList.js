@@ -17,18 +17,12 @@ export default function ShoppingList({ userInfo }) {
         method: "GET",
     })
         .then((res) => res.json())
-        .then((data) => {
-        //remove this block later//
-        console.log("ShoppingList data is: ", data)
-        return data;
-        })
         .then((data) => setShoppingList(data))
         // .then(() => shoppingList.sort(compare))
         .then(() => console.log(shoppingList.sort(compare))) //remove
     };
 
-    
-
+    // Sorts by item location
     function compare(listItem1, listItem2) {
         if ( listItem1.item_loc < listItem2.item_loc ){
             return -1;
@@ -54,7 +48,7 @@ export default function ShoppingList({ userInfo }) {
     return (
         <div className="shopping-list-header">
             <h3>Shopping List</h3>
-            <button onClick={handleClick}>View Shopping List</button>
+            <button className="button-main" onClick={handleClick}>View Shopping List</button>
             <div className="shopping-list">
                 <h5>Item</h5><h5>Location</h5><h5>Done?</h5>
                 {shoppingListItems}

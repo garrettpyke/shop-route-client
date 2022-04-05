@@ -46,6 +46,11 @@
   }
 }
 
+.button-main {
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 1.5rem;
+}
+
 .item-list {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr .5fr;
@@ -62,7 +67,7 @@
 }
 
 .item-list h5 {
-  font-size: 1rem;
+  font-size: 1.5rem;
   border: 2px solid #777;
   border-bottom: .2rem solid black;
 }
@@ -97,7 +102,7 @@ button {
 
 h3, h5 {
   font-family: 'Patrick Hand', cursive;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 p {
