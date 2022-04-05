@@ -1,5 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Kanit:wght@300&family=Poiret+One&family=Roboto:wght@300&family=Shadows+Into+Light&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Kanit:wght@300&family=Permanent+Marker&family=Poiret+One&family=Roboto:wght@300&family=Shadows+Into+Light&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Kanit:wght@300&family=Patrick+Hand&family=Permanent+Marker&family=Poiret+One&family=Roboto:wght@300&family=Shadows+Into+Light&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Kanit:wght@300&family=Pathway+Gothic+One&family=Patrick+Hand&family=Permanent+Marker&family=Poiret+One&family=Roboto:wght@300&family=Sawarabi+Gothic&family=Shadows+Into+Light&display=swap');
+
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
   box-sizing: border-box;
   list-style: disc;
   --padding: 1rem;
@@ -78,8 +86,22 @@
   box-shadow: 2px 0 5px 0 rgba(0, 0, 0, .2);
 }
 
-.form {
-  display: grid;
-  grid-template-rows: auto;
-  align-items: center;
+.form, .form input {
+   font-family: 'Pathway Gothic One', sans-serif;
+   font-size: 1.5rem;
+}
+
+button {
+  font-family: 'Sawarabi Gothic', sans-serif;
+}
+
+h3, h5 {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.5rem;
+}
+
+p {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 1.5rem;
+  font-weight: bold;
 }

@@ -38,8 +38,6 @@ export default function ShoppingList({ userInfo }) {
         }
         return 0;
     }
-    // shoppingList.sort(compare)
-    // console.log('Sorted list is: ', shoppingList)
 
     const shoppingListItems = shoppingList.sort(compare).map((listItem) => {
         return (
