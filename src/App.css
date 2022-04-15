@@ -1,3 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Kanit:wght@300&family=Poiret+One&family=Roboto:wght@300&family=Shadows+Into+Light&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Kanit:wght@300&family=Permanent+Marker&family=Poiret+One&family=Roboto:wght@300&family=Shadows+Into+Light&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Kanit:wght@300&family=Patrick+Hand&family=Permanent+Marker&family=Poiret+One&family=Roboto:wght@300&family=Shadows+Into+Light&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Kanit:wght@300&family=Pathway+Gothic+One&family=Patrick+Hand&family=Permanent+Marker&family=Poiret+One&family=Roboto:wght@300&family=Sawarabi+Gothic&family=Shadows+Into+Light&display=swap');
+
+* {
+  /* font-family: Arial, Helvetica, sans-serif; */
+  box-sizing: border-box;
+  list-style: disc;
+  --padding: 1rem;
+  --color: hsl(217, 50%, 50%);
+  --hover: hsl(217, 50%, 60%);
+  --input: hsl(217, 50%, 60%);
+  --input-focus: hsl(357, 50%, 60%);
+  --focus: hsl(357, 50%, 50%);
+  --outline-color: black;
+  --outline-hover: hsl(200, 50%, 90%);
+  padding: 1px;
+  margin: 1px;
+}
+
 .App {
   text-align: center;
 }
@@ -13,21 +37,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -37,6 +46,93 @@
   }
 }
 
+.app {
+  background-color: #83c5be;
+  
+}
+
+.sign-in {
+  margin-bottom: 2rem;
+  background-color: #83c5be;
+}
+
+.button-main {
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 1.5rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
+  background-color: #E29578;
+}
+
+.item-master {
+  background-color: #EDF6F9;
+}
+
 .item-list {
-  display: inline
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr .5fr;
+  align-items: stretch;
+  border: 1px solid #777;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
+  margin-bottom: 2rem;
+  background-color: #FFDDD2;
+}
+
+.item-list p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 0 5px 0 rgba(0, 0, 0, .2);
+}
+
+.item-list h5 {
+  font-size: 1.5rem;
+  border: 2px solid #777;
+  border-bottom: .2rem solid black;
+  background-color: #83c5be;
+}
+
+.shopping-list {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  align-items: stretch;
+  border: 2px solid #777;
+  box-shadow: 0 2px 5px 0 rgba(0, 0,  0, .2);
+}
+
+.shopping-list h5 {
+  font-size: 1.5rem;
+  border: 2px solid #777;
+  border-bottom: .2rem solid black;
+  background-color: #83c5be;
+}
+
+.shopping-list p {
+  /* border-bottom: 1px solid #777; */
+  box-shadow: 2px 0 5px 0 rgba(0, 0, 0, .2);
+  background-color: #96616B;
+}
+
+.form, .form input {
+   font-family: 'Pathway Gothic One', sans-serif;
+   font-size: 1.5rem;
+}
+
+button {
+  font-family: 'Sawarabi Gothic', sans-serif;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
+  background-color: #006D77;
+  color: white;
+}
+
+h3, h5 {
+  /* font-family: 'Patrick Hand', cursive; */
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 2rem;
+}
+
+p {
+  /* font-family: 'Shadows Into Light', cursive; */
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.5rem;
+  font-weight: bold;
 }

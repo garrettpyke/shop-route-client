@@ -43,7 +43,7 @@ export default function Home() {
                 <h3>Welcome! Please sign in.</h3>
                 <form onSubmit={handleSubmit}>
                     <input type="text" name="email" value={user.email} onChange={handleChange} placeholder="email"></input>
-                    <input type="text" name="password" value={user.password} onChange={handleChange} placeholder="password"></input>
+                    <input type="password" name="password" value={user.password} onChange={handleChange} placeholder="password"></input>
                     <input type="submit" value="sign-in"/>
                 </form>
             </div>
