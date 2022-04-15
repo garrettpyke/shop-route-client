@@ -1,10 +1,8 @@
-import React, { useState } from 'react'
-import ItemMaster from '../ItemMaster/ItemMaster'
+import { useState } from 'react'
 
 const loginUrl = 'http://localhost:8000/sign-in/'
 
-export default function Home() {
-    const [tokenInfo, setTokenInfo] = useState({user:{id: 0, email: "", token: ""}})
+export default function SignInForm({ tokenInfo, setTokenInfo }) {
     const [user, setUser] = useState({email: "", password: ""})
 
     // Handles fields for user log-in
@@ -38,17 +36,13 @@ export default function Home() {
     console.log('tokenInfo is ', tokenInfo) //remove later
 
     return (
-        <>
-            <div className="form sign-in">
-                <h3>Welcome! Please sign in.</h3>
-                <form onSubmit={handleSubmit}>
-                    <input type="text" name="email" value={user.email} onChange={handleChange} placeholder="email"></input>
-                    <input type="password" name="password" value={user.password} onChange={handleChange} placeholder="password"></input>
-                    <input type="submit" value="sign-in"/>
-                </form>
-            </div>
-            {tokenInfo.user?.token ? (<ItemMaster userInfo={tokenInfo.user}/>) : null}
-        </>
+        <div className="form sign-in">
+            <h3>Welcome! Please sign in.</h3>
+            <form onSubmit={handleSubmit}>
+                <input type="text" name="email" value={user.email} onChange={handleChange} placeholder="email"></input>
+                <input type="password" name="password" value={user.password} onChange={handleChange} placeholder="password"></input>
+                <input type="submit" value="sign-in"/>
+            </form>
+        </div>
     )
 }
-
