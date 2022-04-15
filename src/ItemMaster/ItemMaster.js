@@ -51,23 +51,34 @@ export default function ItemMaster({ userInfo }) {
         })
   }
 
+  // Sort master items list by item description (name)
+  function compare(item1, item2) {
+    if (item1.item_name < item2.item_name) {
+      return -1;
+    }
+    if (item1.item_name > item2.item_name) {
+      return 1;
+    }
+    return 0;
+  }
+
   // Renders Item Master list
-  const itemsList = items.map((item) => {
+  const itemsList = items.sort(compare).map((item) => {
     return (
       <>
-      <p key={item.id}>{item.item_name}</p>
-      <p>{item.item_location}</p>
-      <p>{item.item_class}</p>
-      {/* key is incremented here re React doesn't want same key value for different children */}
-      <button
-        key={item.id + 1}
-        onClick={() =>
-          addToShoppingList(item.id, 1, item.item_name, item.item_location)
-        }
-      >
-        Add to Shopping List
-      </button>
-    </>
+        <p key={item.id}>{item.item_name}</p>
+        <p>{item.item_location}</p>
+        <p>{item.item_class}</p>
+        {/* key is incremented here re React doesn't want same key value for different children */}
+        <button
+          key={item.id + 1}
+          onClick={() =>
+            addToShoppingList(item.id, 1, item.item_name, item.item_location)
+          }
+        >
+          Add to Shopping List
+        </button>
+      </>
     );
   });
 
