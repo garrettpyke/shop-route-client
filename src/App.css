@@ -7,7 +7,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Kanit:wght@300&family=Pathway+Gothic+One&family=Patrick+Hand&family=Permanent+Marker&family=Poiret+One&family=Roboto:wght@300&family=Sawarabi+Gothic&family=Shadows+Into+Light&display=swap');
 
 * {
-  /* font-family: Arial, Helvetica, sans-serif; */
   box-sizing: border-box;
   list-style: disc;
   --padding: 1rem;
@@ -24,6 +23,7 @@
 
 .App {
   text-align: center;
+  background-color: #83c5be;
 }
 
 .App-logo {
@@ -44,11 +44,6 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-.app {
-  background-color: #83c5be;
-  
 }
 
 .sign-in {
@@ -107,7 +102,6 @@
 }
 
 .shopping-list p {
-  /* border-bottom: 1px solid #777; */
   box-shadow: 2px 0 5px 0 rgba(0, 0, 0, .2);
   background-color: #96616B;
 }
@@ -125,13 +119,11 @@ button {
 }
 
 h3, h5 {
-  /* font-family: 'Patrick Hand', cursive; */
   font-family: 'Shadows Into Light', cursive;
   font-size: 2rem;
 }
 
 p {
-  /* font-family: 'Shadows Into Light', cursive; */
   font-family: 'Patrick Hand', cursive;
   font-size: 1.5rem;
   font-weight: bold;
