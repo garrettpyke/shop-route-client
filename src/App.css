@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Kanit:wght@300&family=Poiret+One&family=Roboto:wght@300&family=Shadows+Into+Light&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Kanit:wght@300&family=Poiret+One&family=Roboto:wght@300&family=Shadows+Into+Light&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Kanit:wght@300&family=Permanent+Marker&family=Poiret+One&family=Roboto:wght@300&family=Shadows+Into+Light&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Kanit:wght@300&family=Permanent+Marker&family=Poiret+One&family=Roboto:wght@300&family=Shadows+Into+Light&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Kanit:wght@300&family=Patrick+Hand&family=Permanent+Marker&family=Poiret+One&family=Roboto:wght@300&family=Shadows+Into+Light&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Kanit:wght@300&family=Patrick+Hand&family=Permanent+Marker&family=Poiret+One&family=Roboto:wght@300&family=Shadows+Into+Light&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Kanit:wght@300&family=Pathway+Gothic+One&family=Patrick+Hand&family=Permanent+Marker&family=Poiret+One&family=Roboto:wght@300&family=Sawarabi+Gothic&family=Shadows+Into+Light&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Kanit:wght@300&family=Pathway+Gothic+One&family=Patrick+Hand&family=Permanent+Marker&family=Poiret+One&family=Roboto:wght@300&family=Sawarabi+Gothic&family=Shadows+Into+Light&display=swap");
 
 * {
   box-sizing: border-box;
@@ -52,37 +52,37 @@
 }
 
 .button-main {
-  font-family: 'Pathway Gothic One', sans-serif;
+  font-family: "Pathway Gothic One", sans-serif;
   font-size: 1.5rem;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
-  background-color: #E29578;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  background-color: #e29578;
 }
 
 .item-master {
-  background-color: #EDF6F9;
+  background-color: #edf6f9;
 }
 
 .item-list {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr .5fr;
+  grid-template-columns: 2fr 1fr 1fr 0.5fr;
   align-items: stretch;
   border: 1px solid #777;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
   margin-bottom: 2rem;
-  background-color: #FFDDD2;
+  background-color: #ffddd2;
 }
 
 .item-list p {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 2px 0 5px 0 rgba(0, 0, 0, .2);
+  box-shadow: 2px 0 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 .item-list h5 {
   font-size: 1.5rem;
   border: 2px solid #777;
-  border-bottom: .2rem solid black;
+  border-bottom: 0.2rem solid black;
   background-color: #83c5be;
 }
 
@@ -91,40 +91,42 @@
   grid-template-columns: 2fr 1fr 1fr;
   align-items: stretch;
   border: 2px solid #777;
-  box-shadow: 0 2px 5px 0 rgba(0, 0,  0, .2);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 .shopping-list h5 {
   font-size: 1.5rem;
   border: 2px solid #777;
-  border-bottom: .2rem solid black;
+  border-bottom: 0.2rem solid black;
   background-color: #83c5be;
 }
 
 .shopping-list p {
-  box-shadow: 2px 0 5px 0 rgba(0, 0, 0, .2);
-  background-color: #96616B;
+  box-shadow: 2px 0 5px 0 rgba(0, 0, 0, 0.2);
+  background-color: #96616b;
 }
 
-.form, .form input {
-   font-family: 'Pathway Gothic One', sans-serif;
-   font-size: 1.5rem;
+.form,
+.form input {
+  font-family: "Pathway Gothic One", sans-serif;
+  font-size: 1.5rem;
 }
 
 button {
-  font-family: 'Sawarabi Gothic', sans-serif;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
-  background-color: #006D77;
+  font-family: "Sawarabi Gothic", sans-serif;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  background-color: #006d77;
   color: white;
 }
 
-h3, h5 {
-  font-family: 'Shadows Into Light', cursive;
+h3,
+h5 {
+  font-family: "Shadows Into Light", cursive;
   font-size: 2rem;
 }
 
 p {
-  font-family: 'Patrick Hand', cursive;
+  font-family: "Patrick Hand", cursive;
   font-size: 1.5rem;
   font-weight: bold;
 }

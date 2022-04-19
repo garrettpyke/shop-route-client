@@ -9,14 +9,14 @@ const shoppingListsUrl = "http://localhost:8000/shopping-lists/";
 export default function ItemMaster({ userInfo }) {
   const [items, setItems] = useState([]);
   // list_num is hard-coded currently...will use to support multiple shopping lists later
-  let shoppingListItem = {item_num: 0, item_qty: 0, list_num: 1}
+  let shoppingListItem = { item_num: 0, item_qty: 0, list_num: 1 };
 
   // Fetches Item Master list for current user
   const handleClick = () => {
     fetch(itemsUrl, {
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Token ${userInfo.token}`,
+        Authorization: `Token ${userInfo.token}`,
       },
       method: "GET",
     })
@@ -31,25 +31,26 @@ export default function ItemMaster({ userInfo }) {
 
   // Adds an item to current user's Shopping List
   const addToShoppingList = (itemId, item_qty) => {
-    shoppingListItem.item_num = itemId
-    shoppingListItem.item_qty = item_qty
+    shoppingListItem.item_num = itemId;
+    shoppingListItem.item_qty = item_qty;
     // remove later //
-    console.log("shoppingListItem is: ", shoppingListItem)
+    console.log("shoppingListItem is: ", shoppingListItem);
 
     fetch(shoppingListsUrl, {
-        headers: {
-            'Content-Type': 'application/json',
-            "Authorization": `Token ${userInfo.token}`,
-        },
-        method: 'POST',
-        body: JSON.stringify(shoppingListItem)
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Token ${userInfo.token}`,
+      },
+      method: "POST",
+      body: JSON.stringify(shoppingListItem),
     })
-        .then(res => res.json())
-        .then(data => {             //remove this block later
-            console.log('shopping-list data is ', data)
-            return data
-        })
-  }
+      .then((res) => res.json())
+      .then((data) => {
+        //remove this block later
+        console.log("shopping-list data is ", data);
+        return data;
+      });
+  };
 
   // Sort master items list by item description (name)
   function compare(item1, item2) {
@@ -67,11 +68,11 @@ export default function ItemMaster({ userInfo }) {
     return (
       <>
         <p key={item.id}>{item.item_name}</p>
-        <p>{item.item_location}</p>
-        <p>{item.item_class}</p>
+        <p key={item.id + 1}>{item.item_location}</p>
+        <p key={item.id + 2}>{item.item_class}</p>
         {/* key is incremented here re React doesn't want same key value for different children */}
         <button
-          key={item.id + 1}
+          key={item.id + 3}
           onClick={() =>
             addToShoppingList(item.id, 1, item.item_name, item.item_location)
           }

@@ -48,14 +48,10 @@ export default function ShoppingList({ userInfo }) {
   const shoppingListItems = shoppingList.sort(compare).map((listItem) => {
     return (
       <>
-        <p key={listItem.item_num}>{listItem.item_name}</p>
-        <p>{listItem.item_location}</p>
+        <p key={listItem.id}>{listItem.item_name}</p>
+        <p key={listItem.id + 1}>{listItem.item_location}</p>
         {/* {listItem.item_qty}  Add to list later... */}
-        {/* <p>{listItem.item_complete.toString()}</p> */}
-        <button
-          key={listItem.item_num + 2}
-          onClick={() => handleDelete(listItem.id)}
-        >
+        <button key={listItem.id + 2} onClick={() => handleDelete(listItem.id)}>
           Done!
         </button>
       </>

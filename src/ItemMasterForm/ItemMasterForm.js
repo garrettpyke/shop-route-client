@@ -38,7 +38,14 @@ export default function ItemMasterForm(props) {
         console.log("data is ", data);
         return data;
       })
-      .then(() => setNewItem({ item_name: "", item_location: "", item_class: "", shopper_id: 0}))
+      .then(() =>
+        setNewItem({
+          item_name: "",
+          item_location: "",
+          item_class: "",
+          shopper_id: 0,
+        })
+      )
       .then(() => props.handleClick());
   };
 
